@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- BANNERS -->
+<section class="banners">
+  <div class="banner red">
+    <h2>Zero Convenience Fee</h2>
+    <p>Order daily essentials</p>
+  </div>
+  <div class="banner purple">
+    <h2>Everyday Lowest Prices</h2>
+    <p>Best deals in your area</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="product-section">
+  <h2>Laundry & Household</h2>
+
+  <div class="product-row">
+    {% for i in items %}
+    <div class="product-card">
+      <img src="https://picsum.photos/200/200?random={{ i[0] }}">
+      <h4>{{ i[1] }}</h4>
+      <p class="price">₹{{ i[2] }}</p>
+      <p class="stock">Stock {{ i[3] }}</p>
+
+      <div class="actions">
+        <a href="/order/{{ i[0] }}" class="add-btn">ADD</a>
+        <a href="/buy/{{ i[0] }}" class="buy-btn">BUY NOW</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scan QR</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="scan-box">
+  <h2>📷 Scan Order QR</h2>
+
+  <p>Use mobile camera or upload QR image</p>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="qrfile" accept="image/*" required>
+    <br><br>
+    <button type="submit" class="scan-btn">Upload & Scan</button>
+  </form>
+
+  {% if scanned %}
+    <p class="success">{{ scanned }}</p>
+  {% endif %}
+  {% if order %}
+<h3>Order #{{ order[0] }}</h3>
+<p>Product: {{ order[1] }}</p>
+
+<form method="POST" action="/verify_delivery/{{ order[0] }}">
+  <input type="text" name="name" placeholder="Delivery Person Name" required>
+  <input type="text" name="otp" placeholder="Enter Customer OTP" required>
+  <button class="scan-btn">Verify & Deliver</button>
+</form>
+{% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delivery Details</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="picker-topbar">
+  <h3>🚚 Delivery Person Details</h3>
+  <a href="/logout">Logout</a>
+</div>
+
+<div class="picker-orders">
+
+  <div class="picker-card">
+    <h4>Order #{{ oid }}</h4>
+
+    <form method="post">
+      <input
+        type="text"
+        name="name"
+        placeholder="Delivery Person Name"
+        required
+      >
+
+      <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+        required
+      >
+
+      <button type="submit" class="pick-btn">
+        Continue to OTP Verification
+      </button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>

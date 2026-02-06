@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Orders</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="navbar">
+  <div class="logo">🛒 MySupermarket</div>
+  <div>
+    <a href="/products">Products</a>
+    <a href="/logout" class="logout">Logout</a>
+  </div>
+</div>
+
+<div class="order-page">
+
+  <h2>Your Orders</h2>
+
+  {% if data|length == 0 %}
+    <p>No orders yet.</p>
+  {% endif %}
+
+  {% for o in data %}
+  <div class="order-card-ui">
+
+    <img src="https://picsum.photos/120/120?random={{ o[0] }}">
+
+    <div class="order-info">
+      <h4>Order #{{ o[0] }}</h4>
+      <p class="item-name">{{ o[1] }}</p>
+
+      <span class="status {{ o[2]|lower }}">
+        {{ o[2] }}
+      </span>
+    </div>
+<p>Status: {{ o[2] }}</p>
+{% if o[2] != 'Delivered' %}
+<p><b>Delivery OTP:</b> {{ o[3] }}</p>
+{% endif %}
+
+    <div class="order-action">
+      {% if o[2] == "Pending" %}
+        <a href="/payment/{{ o[0] }}" class="pay-btn">Buy Now</a>
+      {% else %}
+        <span class="done">✔</span>
+      {% endif %}
+    </div>
+
+  </div>
+  {% endfor %}
+
+</div>
+
+</body>
+</html>

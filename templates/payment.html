@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body style="text-align:center">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="navbar">
+  <div class="logo">🛒 MySupermarket</div>
+  <div>
+    <a href="/products">Products</a>
+    <a href="/cart">Cart</a>
+    <a href="/analytics">Analytics</a>
+    <a href="/help">Help</a>
+    <a href="/logout" class="logout">Logout</a>
+  </div>
+</div>
+
+<h2>Pay Now</h2>
+<p>Amount: ₹{{ amount }}</p>
+
+<form action="/payment_success/{{ oid }}">
+  <button style="padding:10px 20px">Pay via UPI</button>
+</form>
+
+</body>
+</html>

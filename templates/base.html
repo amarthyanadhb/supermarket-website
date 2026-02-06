@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Choice Supermarket</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo-area">
+    <img src="/static/logo.png" class="logo">
+    <span class="location">Select Location ▼</span>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search for products">
+  </div>
+
+  <div class="header-icons">
+    <a href="/cart">🛒 Cart</a>
+    <a href="/logout" class="logout">Logout</a>
+  </div>
+</header>
+
+<!-- CATEGORY BAR -->
+<nav class="categories">
+  <a href="/products?category=All" class="{{ 'active' if selected=='All' }}">All</a>
+  <a href="/products?category=Fruits & Veg" class="{{ 'active' if selected=='Fruits & Veg' }}">Fruits & Veg</a>
+  <a href="/products?category=Dairy" class="{{ 'active' if selected=='Dairy' }}">Dairy</a>
+  <a href="/products?category=Atta & Rice" class="{{ 'active' if selected=='Atta & Rice' }}">Atta & Rice</a>
+  <a href="/products?category=Meat" class="{{ 'active' if selected=='Meat' }}">Meat</a>
+  <a href="/products?category=Masala" class="{{ 'active' if selected=='Masala' }}">Masala</a>
+  <a href="/products?category=Packaged" class="{{ 'active' if selected=='Packaged' }}">Packaged</a>
+  <a href="/products?category=Cleaning" class="{{ 'active' if selected=='Cleaning' }}">Cleaning</a>
+</nav>
+
+
+<!-- PAGE CONTENT -->
+{% block content %}{% endblock %}
+
+</body>
+</html>

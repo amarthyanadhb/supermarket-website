@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Picker Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="picker-topbar">
+  <h3>📦 Orders</h3>
+  <a href="/logout">Logout</a>
+</div>
+
+<!-- STATUS TABS -->
+<div class="picker-tabs">
+  <span class="tab active">New</span>
+  <span class="tab">Picking</span>
+  <span class="tab">Picked</span>
+</div>
+
+<!-- ORDERS -->
+<div class="picker-orders">
+
+  {% if orders|length == 0 %}
+    <p class="empty">No new orders</p>
+  {% endif %}
+
+  {% for o in orders %}
+  <div class="picker-card">
+
+    <div class="card-header">
+      <span class="order-id">Order #{{ o[0] }}</span>
+      <span class="status new">NEW</span>
+    </div>
+
+    <div class="card-body">
+      <p><b>Product:</b> {{ o[1] }}</p>
+      <p><b>Shelf:</b> {{ o[2] }} | <b>Bin:</b> {{ o[3] }}</p>
+    </div>
+
+    <div class="card-footer">
+      <a href="/mark_picked/{{ o[0] }}" class="pick-btn">Mark Picked</a>
+    </div>
+
+  </div>
+  {% endfor %}
+
+</div>
+
+</body>
+</html>

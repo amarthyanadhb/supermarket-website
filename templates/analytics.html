@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Analytics</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">🛒 MySupermarket</div>
+  <div>
+    <a href="/products">Products</a>
+    <a href="/cart">Orders</a>
+    <a href="/analytics">Analytics</a>
+    <a href="/predict">Demand</a>
+    <a href="/help">Help</a>
+    <a href="/logout" class="logout">Logout</a>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div class="analytics-page">
+
+  <h2>📊 Admin Analytics</h2>
+
+  <div class="analytics-grid">
+
+    <div class="analytics-card">
+      <div class="icon blue">📦</div>
+      <div class="info">
+        <p>Total Orders</p>
+        <h3>{{ total }}</h3>
+      </div>
+    </div>
+
+    <div class="analytics-card">
+      <div class="icon green">✅</div>
+      <div class="info">
+        <p>Delivered</p>
+        <h3>{{ delivered }}</h3>
+      </div>
+    </div>
+
+    <div class="analytics-card">
+      <div class="icon orange">⏳</div>
+      <div class="info">
+        <p>Pending</p>
+        <h3>{{ pending }}</h3>
+      </div>
+    </div>
+
+    <div class="analytics-card">
+      <div class="icon purple">💰</div>
+      <div class="info">
+        <p>Revenue</p>
+        <h3>₹{{ revenue }}</h3>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

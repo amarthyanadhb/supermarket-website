@@ -1,0 +1,629 @@
+* {
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f7f7f7;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  height: 40px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.location {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+.search-bar input {
+  width: 420px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.header-icons a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.logout {
+  color: #e74c3c;
+}
+
+/* CATEGORIES */
+.categories {
+  display: flex;
+  gap: 25px;
+  padding: 14px 24px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+.categories a.active {
+  color: #7b2cbf;
+  font-weight: bold;
+  border-bottom: 2px solid #7b2cbf;
+  padding-bottom: 6px;
+}
+
+.categories a {
+  font-size: 14px;
+  cursor: pointer;
+  color: #555;
+}
+
+.categories a:first-child {
+  color: #7b2cbf;
+  font-weight: bold;
+}
+
+/* BANNERS */
+.banners {
+  display: flex;
+  gap: 20px;
+  padding: 20px 24px;
+}
+
+.banner {
+  flex: 1;
+  padding: 30px;
+  border-radius: 16px;
+  color: white;
+}
+
+.banner.red {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+}
+
+.banner.purple {
+  background: linear-gradient(135deg, #b983ff, #7f7fd5);
+}
+
+/* PRODUCT SECTION */
+.product-section {
+  padding: 20px 24px;
+}
+
+.product-section h2 {
+  margin-bottom: 15px;
+}
+
+.product-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  background: white;
+  width: 200px;
+  padding: 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-card h4 {
+  font-size: 14px;
+  margin: 10px 0 4px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.stock {
+  font-size: 12px;
+  color: green;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.add-btn {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ff2d55;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* ---------- LOGIN PAGE ---------- */
+
+.login-body {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
+              no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.login-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+}
+
+.login-card {
+  position: relative;
+  width: 350px;
+  padding: 35px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  color: white;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  color: #ddd;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -8px;
+  font-size: 12px;
+  color: #ffd369;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff9f43, #ff6f00);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+.login-hint {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #eee;
+}
+/* ---------- ORDER PAGE ---------- */
+
+.order-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.order-page h2 {
+  margin-bottom: 20px;
+}
+
+.order-card-ui {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.order-card-ui img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.order-info {
+  flex: 1;
+}
+
+.order-info h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.item-name {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.picked {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.status.packed {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.status.delivered {
+  background: #d4edda;
+  color: #155724;
+}
+
+.order-action {
+  text-align: right;
+}
+
+.pay-btn {
+  background: #ff2d55;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.pay-btn:hover {
+  opacity: 0.9;
+}
+
+.done {
+  font-size: 22px;
+  color: green;
+}
+/* ---------- HELP & SUPPORT ---------- */
+
+.help-hero {
+  background: linear-gradient(135deg, #0984e3, #6c5ce7);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.help-hero h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.help-hero p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.help-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.help-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.help-card h3 {
+  margin: 15px 0 10px;
+}
+
+.help-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.help-icon {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.help-icon.blue {
+  background: #0984e3;
+}
+
+.help-icon.green {
+  background: #00b894;
+}
+
+.help-icon.purple {
+  background: #6c5ce7;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.add-btn {
+  background: #ff2d55;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.buy-btn {
+  background: #00b894;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+/* ---------- PICKER DASHBOARD ---------- */
+
+.picker-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.picker-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #eee;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.tab.active {
+  background: #ff2d55;
+  color: white;
+}
+
+.picker-orders {
+  padding: 15px;
+}
+
+.picker-card {
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.order-id {
+  font-weight: bold;
+}
+
+.status.new {
+  background: #ffeaa7;
+  color: #2d3436;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.card-body p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.card-footer {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.pick-btn {
+  background: #0984e3;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.pick-btn:hover {
+  opacity: 0.9;
+}
+
+.empty {
+  text-align: center;
+  color: #777;
+}
+/* ---------- PACKER DASHBOARD ---------- */
+
+.packer-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.packer-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.packer-orders {
+  padding: 15px;
+}
+
+.packer-card {
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.status.picked {
+  background: #74b9ff;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status.packed {
+  background: #55efc4;
+  color: #2d3436;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.pack-btn {
+  background: #00b894;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.pack-btn:hover {
+  opacity: 0.9;
+}
+/* ---------- SCAN ---------- */
+.scan-box {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.scan-btn {
+  padding: 10px 20px;
+  background: #6c5ce7;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+
+.success {
+  margin-top: 15px;
+  color: green;
+}
+
+/* ---------- ADMIN DASHBOARD ---------- */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 220px;
+  background: #6c5ce7;
+  color: white;
+  padding: 20px;
+}
+
+.admin-sidebar a {
+  display: block;
+  color: white;
+  margin: 15px 0;
+  text-decoration: none;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+}
+

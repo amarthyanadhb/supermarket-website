@@ -1,0 +1,18 @@
+<h2>📈 Demand Prediction (Tomorrow)</h2>
+<link rel="stylesheet" href="/static/style.css">
+
+<div class="navbar">
+  <div class="logo">🛒 MySupermarket</div>
+  <div>
+    <a href="/products">Products</a>
+    <a href="/cart">Cart</a>
+    <a href="/analytics">Analytics</a>
+    <a href="/help">Help</a>
+    <a href="/logout" class="logout">Logout</a>
+  </div>
+</div>
+
+{% for d in data %}
+<p>{{ d[0] }} → Expected Demand: {{ d[1]|round }} units</p>
+{% endfor %}
+

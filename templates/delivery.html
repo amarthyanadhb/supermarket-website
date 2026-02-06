@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delivery Orders</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="picker-topbar">
+  <h3>🚚 Delivery Orders</h3>
+  <a href="/logout">Logout</a>
+</div>
+
+<div class="picker-orders">
+
+  {% if orders|length == 0 %}
+    <p class="empty">No orders available</p>
+  {% endif %}
+
+  {% for o in orders %}
+  <div class="picker-card">
+
+    <!-- HEADER -->
+    <div class="card-header">
+      <span class="order-id">Order #{{ o[0] }}</span>
+      <span class="status packed">{{ o[3] }}</span>
+    </div>
+
+    <!-- BODY -->
+    <div class="card-body">
+      <p><b>Product:</b> {{ o[1] }}</p>
+
+      {% if o[2] %}
+        <img
+          src="{{ url_for('static', filename=o[2]) }}"
+          alt="Order QR"
+          style="width:120px; height:120px; object-fit:contain; margin-top:10px;"
+        >
+      {% else %}
+        <p style="color:red;">QR not generated</p>
+      {% endif %}
+    </div>
+
+    <!-- FOOTER -->
+    <div class="card-footer">
+
+      {% if o[3] == 'Packed' %}
+        <!-- Upload & verify QR -->
+        <form
+          action="/verify_qr/{{ o[0] }}"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input type="file" name="qrfile" required>
+          <button type="submit" class="pick-btn">
+            📤 Upload & Verify QR
+          </button>
+        </form>
+
+      {% elif o[3] == 'Delivered' %}
+        <span style="color:green;">
+          ✅ Delivered by {{ o[4] }}
+        </span>
+      {% endif %}
+
+    </div>
+
+  </div>
+  {% endfor %}
+
+</div>
+
+</body>
+</html>

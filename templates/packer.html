@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Packer Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="packer-topbar">
+  <h3>📦 Packing Orders</h3>
+  <a href="/logout">Logout</a>
+</div>
+
+<!-- STATUS TABS -->
+<div class="packer-tabs">
+  <span class="tab active">Picked</span>
+  <span class="tab">Packed</span>
+</div>
+
+<!-- ORDERS -->
+<div class="packer-orders">
+
+  {% if orders|length == 0 %}
+    <p class="empty">No orders to pack</p>
+  {% endif %}
+
+  {% for o in orders %}
+  <div class="packer-card">
+
+    <div class="card-header">
+      <span class="order-id">Order #{{ o[0] }}</span>
+      <span class="status picked">PICKED</span>
+    </div>
+
+    <div class="card-body">
+      <p><b>Product:</b> {{ o[1] }}</p>
+      <p>Ready for packing & QR labeling</p>
+    </div>
+
+    <div class="card-footer">
+      <a href="/pack/{{ o[0] }}" class="pack-btn">Pack & Generate QR</a>
+    </div>
+
+  </div>
+  {% endfor %}
+
+</div>
+
+</body>
+</html>
